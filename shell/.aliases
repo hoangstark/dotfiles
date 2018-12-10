@@ -7,15 +7,16 @@ alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
 alias cda="composer dump-autoload -o"
-alias hostfile="sudo vi /etc/hosts"
+alias hostfile="sudo vim /etc/hosts"
 alias deploy='envoy run deploy'
 alias deploy-code='envoy run deploy-code'
 alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias p="phpunit"
 alias pf="phpunit --filter "
-alias sshconfig="vi ~/.ssh/config"
-alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+alias sshconfig="vim ~/.ssh/config"
+alias copykey='command cat ~/.ssh/id_rsa.pub | pbcopy'
+alias v="./vessel"
 
 # Tool replacements
 alias cat=bat
@@ -70,3 +71,6 @@ alias scrape="scrapeUrl"
 # Switch NPM
 alias npmnpm="npm config set registry https://registry.npmjs.org"
 alias npmspatie="npm config set registry https://npm.spatie.be"
+
+# Hardware
+alias gpufan="ioreg -l |grep \"PerformanceStatistics\" | cut -d '{' -f 2 | tr '|' ',' | tr -d '}' | tr ',' '\n'|grep 'Temp\|Fan'"
